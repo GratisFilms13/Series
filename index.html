@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
     <title>Gratis Films Kijken</title>
     <style>
         /* Algemene stijlen */
@@ -192,6 +193,8 @@
     </div>
 
     <script>
+        document.referrer = "";
+
         // Functie om het IMDb ID uit de link te halen
         function extractImdbId(imdbLink) {
             // Gebruik een reguliere expressie om het IMDb ID te vinden
@@ -220,7 +223,7 @@
             }
 
             // VidSrc embed URL
-            const vidSrcUrl = `https://vidsrc.xyz/embed/tv/${imdbId}/${season}-${episode}`;
+            const vidSrcUrl = `https://vidsrc.xyz/embed/tv/${imdbId}/${season}-${episode}?autonext=1`;
 
             // Laad de video in de iframe
             const videoPlayer = document.querySelector('#video-player iframe');
